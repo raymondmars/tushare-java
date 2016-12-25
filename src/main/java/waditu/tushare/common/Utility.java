@@ -1,5 +1,6 @@
 package waditu.tushare.common;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 /**
@@ -8,6 +9,8 @@ import java.util.HashMap;
 public class Utility {
 
     private Utility() {}
+
+    public static final SimpleDateFormat QueryDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     public final static String[] K_LABELS = {"D", "W", "M"};
     public final static String[] K_MIN_LABELS = {"5", "15", "30", "60"};
@@ -18,7 +21,7 @@ public class Utility {
             put("M", "akmonthly");
         }
     };
-    public final static String[] INDEX_LABELS = {"sh", "sz", "hs300", "sz50", "cyb", "zxb", "zx300", "zh500"};
+//    public final static String[] INDEX_LABELS = {"sh", "sz", "hs300", "sz50", "cyb", "zxb", "zx300", "zh500"};
     public final static HashMap<String,String> INDEX_LIST = new HashMap<String, String>() {
         {
             put("sh", "sh000001");
@@ -89,6 +92,7 @@ public class Utility {
 
     public static final String DAY_PRICE_URL = "%sapi.finance.%s/%s/?code=%s&type=last";
     public static final String DAY_PRICE_MIN_URL = "%sapi.finance.%s/akmin?scode=%s&type=%s";
+    public static final String TICK_PRICE_URL = "%smarket.%s/%s?date=%s&symbol=%s";
 
 
     public static boolean _isBlank(String s) {

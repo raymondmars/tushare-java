@@ -22,4 +22,14 @@ public class TradingTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void testGetTickData() {
+        try {
+            Date date = dateFormat.parse("2016-12-21");
+            Trading.getTickData("300118", date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
