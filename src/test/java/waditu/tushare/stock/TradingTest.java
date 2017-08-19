@@ -32,4 +32,14 @@ public class TradingTest {
         }
 
     }
+    @Test
+    public void testGetQuotesData() {
+        try {
+//            System.out.println(Utility.generateRandom(1000_0000, 10_0000_0000));
+            Trading.getRealtimeQuotes("000581");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

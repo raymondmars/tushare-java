@@ -2,6 +2,7 @@ package waditu.tushare.common;
 
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Created by Raymond on 26/11/2016.
@@ -93,10 +94,11 @@ public class Utility {
     public static final String DAY_PRICE_URL = "%sapi.finance.%s/%s/?code=%s&type=last";
     public static final String DAY_PRICE_MIN_URL = "%sapi.finance.%s/akmin?scode=%s&type=%s";
     public static final String TICK_PRICE_URL = "%smarket.%s/%s?date=%s&symbol=%s";
+    public static final String LIVE_DATA_URL = "%shq.%s/rn=%s&list=%s";
 
 
     public static boolean _isBlank(String s) {
-        return (s == null || s.trim().length() == 0) ? true : false;
+        return (s == null || s.trim().length() == 0);
     }
 
     /**
@@ -116,6 +118,11 @@ public class Utility {
         return (firstChar == '5' || firstChar == '6' || firstChar == '9') ? String.format("sh%s", code.trim()) : String.format("sz%s", code.trim());
     }
 
+    public static int generateRandom(int min, int max) {
+        Random random = new Random();
+
+        return random.nextInt(max) + min;
+    }
 
 
 
